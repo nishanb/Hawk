@@ -16,12 +16,16 @@
 Modify DB name and DB name in .env file or import the database
     
     php artisan migrate
+    
+### Genearte Application Key
+    
+    php artisan key:generate
 
 ### Run application
 
     php artisan serve
     
-local application will be avilable at [localhost:8000](localhost:8000). Port number may differ
+local application will be started at [localhost:8000](localhost:8000). Port number may differ
 
 
 
