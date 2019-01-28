@@ -1,9 +1,29 @@
-# LSAPP - Laravel From Scratch App
+# Monitoring of Suspicious activity in cms
+ Built with laravel 5 and python 
 
-This is the source code for the "Laravel From Scratch" Youtube series by Traversy media. It is a website with a blog application. It also includes full authentication and file uploading.
+## Getting started
 
-## Version
-1.0.0
+
+### Clone existing repository
+
+    git clone clone_url
+    
+### Update dependencies
+
+    composer update
+    
+### Make DB Migartion
+Modify DB name and DB name in .env file or import the database
+    
+    php artisan migrate
+
+### Run application
+
+    php artisan serve
+    
+local application will be avilable at [localhost:8000](localhost:8000). Port number may differ
+
+
 
 ## Database
 The sql dump is in _SQL/lsapp.sql
