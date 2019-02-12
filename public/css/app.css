@@ -20,6 +20,10 @@ body {
   margin: 0;
 }
 
+.navbar {
+    border-radius: 0px !important;
+}
+
 article,
 aside,
 details,
