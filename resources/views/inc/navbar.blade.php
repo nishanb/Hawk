@@ -12,7 +12,7 @@
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
+              Blogger
             </a>
         </div>
 
@@ -23,10 +23,13 @@
             </ul>
 
             <ul class="nav navbar-nav">
-              <li><a href="/">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/services">Services</a></li>
-              <li><a href="/posts">Blog</a></li>
+              @if (!Auth::guest())
+                  <li><a href="/dashboard">Dashboard</a></li>
+              @endif
+
+              <!--<li><a href="/about">About</a></li>
+              <li><a href="/services">Services</a></li>-->
+              <li><a href="/posts">Posts</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->
