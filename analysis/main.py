@@ -20,25 +20,30 @@ def take_input():
     word_tokens = word_tokenize(sentence)
 
     #stopword filtering
-    words = [w for w in word_tokens if not w in stop_words] 
-    
+    words = [w for w in word_tokens if not w in stop_words]
     return words
 
 #function to predict 
 def predict(words):
-    neg = 0
-    pos = 0
+    neg = list()
+    pos = list()
     for word in words:
         classResult = classifier.classify(word_feats(word))
-        if classResult == 'neg':
-            print("negative "+word)
-            neg = neg + 1
+
         if classResult == 'pos':
-            print("positive "+word)
-            pos = pos + 1
+            #print("positive "+word)
+            pos.append(word)
+            
+        if classResult == 'neg':
+            #print("negative "+word)
+            neg.append(word)
+            
+        
     try:
-        pos=str(float(pos)/len(words))
-        neg=str(float(neg)/len(words))
+        #print("pos",pos)
+        #print("neg",neg)
+        pos=str(float(len(pos))/len(words))
+        neg=str(float(len(neg))/len(words))
     except:
         pos=1
         neg=0
@@ -47,6 +52,7 @@ def predict(words):
     #print('Negative: ' + neg)
 
     print({'pos':pos,'neg':neg})
+    
 
 
 #loading datsets
@@ -70,5 +76,6 @@ classifier = NaiveBayesClassifier.train(train_set)
 while True:
     print("input")
     predict(take_input())
+
 
 
