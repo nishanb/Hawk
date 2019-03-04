@@ -25,6 +25,17 @@ Route::get('/users/{id}/{name}', function($id, $name){
 Route::get('/', 'PagesController@index');
 
 Route::resource('posts', 'PostsController');
+
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index');
+
+Route::prefix('admin')->group(function(){
+
+  
+  Route::get('/',function(){
+    return "Hello";
+  });
+
+
+});
