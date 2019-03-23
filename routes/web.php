@@ -30,12 +30,17 @@ Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index');
 
+//Admin Routes
 Route::prefix('admin')->group(function(){
 
-  
-  Route::get('/',function(){
-    return "Hello";
-  });
+  Route::get('/','AdminController@index');
 
+  Route::get('/posts','AdminController@posts');
+
+  Route::get('/post/{id}','AdminController@post');
+
+  Route::get('/users','AdminController@users');
+
+  Route::get('/comments','AdminController@comments');
 
 });
