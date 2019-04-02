@@ -955,7 +955,7 @@ var OrdersChart = (function() {
 							}
 
 							content += '<span class="popover-body-value">' + yLabel + '</span>';
-							
+
 							return content;
 						}
 					}
@@ -969,6 +969,15 @@ var OrdersChart = (function() {
 				}]
 			}
 		});
+
+		setInterval(function() {
+		  updatedDataSet = [Math.random(), Math.random(), Math.random(), Math.random(),Math.random(), Math.random()];
+
+			ordersChart.data.datasets.pop();
+			//updatedDataSet.push(Math.random());
+		  ordersChart.data.datasets.push({data: updatedDataSet});
+		  ordersChart.update();
+		}, 10000000);
 
 		// Save to jQuery object
 		$chart.data('chart', ordersChart);
@@ -991,6 +1000,12 @@ var OrdersChart = (function() {
 //
 // Sales chart
 //
+
+//Let's initialData[] be the initial data set
+var initialData = [0.1, 0.4, 0.3, 0.6,0.6,0.7,0.9,20];
+
+//Let's updatedDataSet[] be the array to hold the upadted data set with every update call
+var updatedDataSet;
 
 var SalesChart = (function() {
 
@@ -1042,7 +1057,7 @@ var SalesChart = (function() {
 				labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
 				datasets: [{
 					label: 'Performance',
-					data: [0, 20, 10, 30, 15, 40, 20, 60, 60]
+					data: initialData
 				}]
 			}
 		});
@@ -1050,6 +1065,17 @@ var SalesChart = (function() {
 		// Save to jQuery object
 
 		$chart.data('chart', salesChart);
+
+		/*Updating the bar chart with updated data in every second. */
+		setInterval(function() {
+		  //updatedDataSet = [Math.random(), Math.random(), Math.random(), Math.random(),Math.random(), Math.random(), Math.random(), Math.random(),Math.random(), Math.random(), Math.random()];
+			salesChart.data.datasets[0].data.push(Math.random());
+			salesChart.data.datasets[0].data.shift();
+			//updatedDataSet.push(Math.random());
+			console.log(salesChart.data.datasets[0].data)
+		  //salesChart.data.datasets.push({data: updatedDataSet});
+		  salesChart.update();
+		}, 500);
 
 	};
 

@@ -14,7 +14,7 @@
       </div>
     </form>
     <!-- User -->
-    <ul class="navbar-nav align-items-center d-none d-md-flex">
+    {{-- <ul class="navbar-nav align-items-center d-none d-md-flex">
       <li class="nav-item dropdown">
         <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <div class="media align-items-center">
@@ -53,6 +53,6 @@
           </a>
         </div>
       </li>
-    </ul>
+    </ul> --}}
   </div>
 </nav>
