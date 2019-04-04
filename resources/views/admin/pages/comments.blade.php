@@ -2,12 +2,6 @@
 @section('content')
   <div class="row " style="margin-top:0px;">
     <div class="col-xl-12 mb-12 mb-xl-0">
-      {{-- @if (count($posts)==0)
-        <div class="col text-left">
-          <p class="h1 text-white">Nothing in Here</p>
-          <a href="{{url("admin/users")}}" class="btn btn-sm btn-secondary h3">Go Back</a>
-        </div>
-      @else --}}
       <div class="card shadow">
         <div class="card-header border-0">
           <div class="row align-items-center">
@@ -26,10 +20,9 @@
               <tr>
                 <th scope="col">Comment id</th>
                 <th scope="col">Description</th>
-                <th scop="col">Insight</th>
-                <th scope="col">Post</th>
-                <th scope="col">Action</th>
                 <th scope="col">Status</th>
+                <th scope="col">Insights</th>
+                <th scop="col">Post</th>
               </tr>
             </thead>
             <tbody>
@@ -42,25 +35,28 @@
                   <td>
                     {{$comment['description']}}
                   </td>
+                  @if ($comment->status)
+                    <td>
+                      <span class="text-success">Active</span>
+                    </td>
+                  @else
+                    <td>
+                      <span class="text-danger">Blocked</span>
+                    </td>
+                  @endif
                   <td>
-                    <a href="{{url("admin/post/$comment[post_id]")}}" class="btn btn-sm btn-primary">view</a>
+                    <a href="{{url("admin/post/$comment[post_id]")}}" class="btn btn-sm btn-success">view</a>
                   </td>
                   <td>
                     <a href="{{url("admin/post/$comment[post_id]")}}" class="btn btn-sm btn-primary">view</a>
                   </td>
-                  <td>
-                    <a href="#!" class="btn btn-sm btn-danger">Block</a>
-                  </td>
-                  <td>
-                    <span class="text-success">Active</span>
-                  </td>
+
                 </tr>
               @endforeach
             </tbody>
           </table>
         </div>
       </div>
-      {{-- @endif --}}
     </div>
   </div>
 @endsection

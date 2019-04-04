@@ -27,16 +27,16 @@
                 <th scope="col">Post id</th>
                 <th scope="col">Title</th>
                 <th scope="col">User</th>
-                <th scope="col">view</th>
-                <th scope="col">Action</th>
                 <th scope="col">Status</th>
+                <th scope="col">view</th>
               </tr>
             </thead>
             <tbody>
+              <?php $i=0?>
                @foreach ($posts as $post)
                 <tr>
                   <th scope="row">
-                    {{$post['id']}}
+                    {{++$i}}
                   </th>
                   <td>
                     {{$post['title']}}
@@ -44,15 +44,18 @@
                   <td>
                     {{$post->user['name']}}
                   </td>
+
+                  @if ($post->status)
+                    <td>
+                      <span class="text-success">Active</span>
+                    </td>
+                  @else
+                    <td>
+                      <span class="text-danger">Blocked</span>
+                    </td>
+                  @endif
                   <td>
                     <a href="{{url("admin/post/$post[id]")}}" class="btn btn-sm btn-primary">view</a>
-                  </td>
-
-                  <td>
-                    <a href="#!" class="btn btn-sm btn-danger">Block</a>
-                  </td>
-                  <td>
-                    <span class="text-success">Active</span>
                   </td>
                 </tr>
               @endforeach

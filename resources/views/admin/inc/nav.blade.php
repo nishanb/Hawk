@@ -7,7 +7,7 @@
     </button>
     <!-- Brand -->
     <a class="navbar-brand pt-0" href="./index.html">
-      Blog
+      Blogger
     </a>
     <!-- User -->
     <ul class="nav align-items-center d-md-none">
