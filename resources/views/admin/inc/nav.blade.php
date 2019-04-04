@@ -6,11 +6,11 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <!-- Brand -->
-    <a class="navbar-brand pt-0" href="./index.html">
-      Blogger
+    <a class="navbar-brand pt-4 mb-0 pb-0" href="#">
+        <img src="{{asset('admin_assets/img/brand/blue.png')}}" style="width:150px;height:250px!important;" class="navbar-brand-img" alt="...">
     </a>
     <!-- User -->
-    <ul class="nav align-items-center d-md-none">
+    <ul class="nav align-items-center  d-md-none" style="margin-top:20px!important;">
       <li class="nav-item dropdown">
         <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="ni ni-bell-55"></i>

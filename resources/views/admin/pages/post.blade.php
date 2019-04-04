@@ -35,17 +35,18 @@
                             {!!$post->body!!}
                         </div>
                         <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
-                            <p class="description">Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                            <p class="description text-center">working on it</p>
                         </div>
                         <div class="tab-pane fade" id="tabs-icons-text-3" role="tabpanel" aria-labelledby="tabs-icons-text-3-tab">
                           @if(count($comments)==0)
                             <h2 class="description text-center">Nothing in here</p>
                           @else
-                          <table class="table align-items-center table-flush" id="commentsTable">
+                          <table class="table align-items-center table-flush" id="">
                             <thead class="thead-light">
                               <tr>
                                 <th scope="col">Comment id</th>
                                 <th scope="col">Description</th>
+                                <th scope="col">Status</th>
                                 <th scop="col">Insights</th>
                               </tr>
                             </thead>
@@ -53,12 +54,21 @@
                               <?php $i=0?>
                               @foreach ($comments as $comment)
                                 <tr>
-                                  <td>{{$i++}}</td>
+                                  <td>{{++$i}}</td>
                                   <td>
                                     {{$comment['description']}}
                                   </td>
+                                  @if ($comment->status)
+                                    <td>
+                                      <span class="text-success">Active</span>
+                                    </td>
+                                  @else
+                                    <td>
+                                      <span class="text-danger">Blocked</span>
+                                    </td>
+                                  @endif
                                   <td>
-                                    <a href="{{url("admin/post/")}}" class="btn btn-sm btn-primary">view</a>
+                                    <a href="#" class="btn btn-sm btn-primary">view</a>
                                   </td>
                                 </tr>
                               @endforeach
