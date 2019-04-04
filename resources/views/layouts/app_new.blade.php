@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="csrf-content" content="{{Session::token()}}">
+  <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
+  <meta name="author" content="Creative Tim">
   <title>Blogger Admin</title>
   <!-- Favicon -->
   <link href="{{asset('admin_assets/img/brand/favicon.png')}}" rel="icon" type="image/png">
@@ -16,8 +17,6 @@
   <link type="text/css" href="{{asset('admin_assets/css/argon.css?v=1.0.0')}}" rel="stylesheet">
 </head>
 <body>
-  <!--side navbar-->
-  @include('admin.inc.nav')
   <!-- Main content -->
   <div class="main-content">
     <!-- Top navbar -->
@@ -32,7 +31,6 @@
     <div class="container-fluid mt--7">
       @yield('content')
       <div class="mt-5"></div>
-      @include('admin.inc.footer')
     </div>
   </div>
 
@@ -47,6 +45,6 @@
   <script src="{{asset('admin_assets/vendor/chart.js/dist/Chart.extension.js')}}"></script>
   <!-- Argon JS -->
   <script src="{{asset('admin_assets/js/argon.js?v=1.0.0')}}"></script>
-
+  <script src="{{asset('admin_assets/js/comment.js')}}"></script>
 </body>
 </html>

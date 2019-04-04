@@ -45,7 +45,7 @@
                     {{$post->user['name']}}
                   </td>
                   <td>
-                    <a href="{{url("/posts/$post[id]")}}" class="btn btn-sm btn-primary">view</a>
+                    <a href="{{url("admin/post/$post[id]")}}" class="btn btn-sm btn-primary">view</a>
                   </td>
 
                   <td>

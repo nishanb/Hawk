@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\User;
+use App\Comment;
 use DB;
 
 class AdminController extends Controller
 {
 
   public function index(){
-
       return view('admin.pages.index');//->with();
   }
 
@@ -20,8 +20,10 @@ class AdminController extends Controller
   }
 
   public function post($id){
-      $posts=Post::all();
-      return view('admin.pages.post')->with('posts',$posts);
+      $post=Post::find($id);
+      
+      return view('admin.pages.post')->with('post',$post)
+      ->with('comments',$post->comments);
   }
 
   public function users(){
@@ -37,7 +39,11 @@ class AdminController extends Controller
   }
 
   public function comments(){
-      return view('admin.pages.comments');
+      $comments=Comment::all();
+
+      return view('admin.pages.comments')->with('comments',$comments);
+
   }
+
 
 }
