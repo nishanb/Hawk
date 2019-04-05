@@ -8,8 +8,21 @@ use App\Post;
 use App\Comment;
 use DB;
 
+//parallel dots plugin
+require(base_path(). '/vendor/paralleldots/apis/api.php');
+
 class PostsController extends Controller
 {
+
+    public function test()
+    {
+      $text_list = "drugs are fun dont do drugs stay in school";
+      var_dump(sentiment($text_list));
+      echo "\n";
+      var_dump(sentiment("you are a fucking moron"));
+    }
+
+
     /**
      * Create a new controller instance.
      *
@@ -18,6 +31,7 @@ class PostsController extends Controller
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
+
     }
 
     /**
@@ -183,4 +197,7 @@ class PostsController extends Controller
         $post->delete();
         return redirect('/posts')->with('success', 'Post Removed');
     }
+
+
+
 }

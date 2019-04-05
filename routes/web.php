@@ -22,6 +22,8 @@ Route::get('/users/{id}/{name}', function($id, $name){
 });
 */
 
+Route::get('/test','PostsController@test');
+
 Route::get('/', 'PagesController@index');
 
 Route::resource('posts', 'PostsController');
