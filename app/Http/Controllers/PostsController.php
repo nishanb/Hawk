@@ -9,7 +9,7 @@ use App\Comment;
 use DB;
 
 //parallel dots plugin
-require(base_path(). '/vendor/paralleldots/apis/api.php');
+require(base_path().'/app/functions/API.php');
 
 class PostsController extends Controller
 {
@@ -21,7 +21,6 @@ class PostsController extends Controller
       echo "\n";
       var_dump(sentiment("you are a fucking moron"));
     }
-
 
     /**
      * Create a new controller instance.
