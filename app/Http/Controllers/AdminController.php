@@ -24,7 +24,12 @@ class AdminController extends Controller
 
   //index page of admin panel
   public function index(){
-      return view('admin.pages.index')->with('data',$this->data);
+      $posts=Post::orderBy('created_at','desc')->take(5)->get();
+      $comments=Comment::orderBy('created_at','desc')->take(5)->get();
+
+      return view('admin.pages.index')->with('data',$this->data)
+      ->with('posts',$posts)
+      ->with('comments',$comments);
   }
 
   //listing all user posts
