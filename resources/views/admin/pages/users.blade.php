@@ -23,6 +23,7 @@
                 <th scope="col">Email</th>
                 <th scope="col">Total Posts</th>
                 <th scope="col">View Posts</th>
+                <th>violations</th>
                 <th scope="col">Status</th>
                 <th scope="col">Action</th>
               </tr>
@@ -46,24 +47,24 @@
                   <td>
                     <a href="{{url("admin/users/$user[id]/posts")}}" class="btn btn-sm btn-primary">view</a>
                   </td>
+                  <td>
+                    {{$user->violations}}
+                  </td>
                   @if ($user->status)
                     <td>
                       <span class="text-success">Active</span>
                     </td>
                     <td>
-                      <a href="#!" class="btn btn-sm btn-danger">Block</a>
+                      <a href="{{url("admin/block/user/$user->id/$user->status")}}" class="btn btn-sm btn-danger">Block</a>
                     </td>
                   @else
                     <td>
                       <span class="text-danger">Blocked</span>
                     </td>
                     <td>
-                      <a href="#!" class="btn btn-sm btn-success">Unblock</a>
+                      <a href="{{url("admin/block/user/$user->id/$user->status")}}" class="btn btn-sm btn-success">Unblock</a>
                     </td>
                   @endif
-
-
-
 
                 </tr>
               @endforeach

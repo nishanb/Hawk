@@ -26,7 +26,7 @@
               <tr>
                 <th scope="col">Post id</th>
                 <th scope="col">Title</th>
-                <th scope="col">User</th>
+                <th scope="col">writer</th>
                 <th scope="col">Status</th>
                 <th scope="col">view</th>
               </tr>

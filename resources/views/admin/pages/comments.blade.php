@@ -44,14 +44,26 @@
                       <span class="text-danger">Blocked</span>
                     </td>
                   @endif
+
                   <td>
-                    <a href="{{url("admin/post/$comment[post_id]")}}" class="btn btn-sm btn-success">view</a>
+                    <a data-toggle="collapse" href="#collapse{{$comment->id}}" class="btn btn-sm btn-primary" role="button" aria-expanded="true" aria-controls="collapse{{$comment->id}}">view</a>
                   </td>
+
                   <td>
                     <a href="{{url("admin/post/$comment[post_id]")}}" class="btn btn-sm btn-primary">view</a>
                   </td>
-
                 </tr>
+                {{--COmment insight  --}}
+                <tr class="collapse" id="collapse{{$comment->id}}">
+                  <td colspan="5" class="" style="background:#f6f9fc;">
+                    <div class="card ">
+                        <div class="card-body">
+                          Comment by {{$comment->user->name}}
+                        </div>
+                    </div>
+                  </td>
+                </tr>
+
               @endforeach
             </tbody>
           </table>

@@ -20,7 +20,7 @@ Route::get('/hello', function () {
 Route::get('/users/{id}/{name}', function($id, $name){
     return 'This is user '.$name.' with an id of '.$id;
 });
-*/  
+*/
 
 Route::get('/', 'PagesController@index');
 
@@ -48,5 +48,7 @@ Route::prefix('admin')->group(function(){
   Route::get('/comments','AdminController@comments');
 
   Route::post('/comments/{id}/create','AdminController@addComment');
+
+  Route::get('block/{type}/{id}/{status}','AdminController@toggleBlockContent');
 
 });

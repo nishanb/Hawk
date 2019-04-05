@@ -71,4 +71,30 @@ class AdminController extends Controller
 
   }
 
+  //block user,post,comment
+  public function toggleBlockContent($type,$id,$status){
+    //select content type
+    if($type=="post"){
+      $data=Post::find($id);
+    }elseif ($type=="comment") {
+      $data=Comment::find($id);
+    }else {
+      $data=User::find($id);
+    }
+
+    //toggle status
+    if($status){
+      $data->status=0;
+    }
+    else {
+      $data->status=1;
+    }
+
+    //update status
+    $data->save();
+
+    //return back with notification
+    return redirect()->back()->with('status',$type." is blocked");
+  }
+
 }
