@@ -14,14 +14,7 @@ require(base_path().'/app/functions/API.php');
 class PostsController extends Controller
 {
 
-    public function test()
-    {
-      $text_list = "drugs are fun dont do drugs stay in school";
-      var_dump(sentiment($text_list));
-      echo "\n";
-      var_dump(sentiment("you are a fucking moron"));
-    }
-
+    
     /**
      * Create a new controller instance.
      *
