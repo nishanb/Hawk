@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Storage;
 use App\Post;
 use App\Comment;
 use DB;
+use App\Insight;
+use App\User;
 
 //parallel dots plugin
 require(base_path().'/app/functions/API.php');
@@ -14,7 +16,7 @@ require(base_path().'/app/functions/API.php');
 class PostsController extends Controller
 {
 
-    
+
     /**
      * Create a new controller instance.
      *
@@ -89,8 +91,45 @@ class PostsController extends Controller
         $post->body = $request->input('body');
         $post->user_id = auth()->user()->id;
         $post->cover_image = $fileNameToStore;
-        $post->save();
 
+        //create insight
+        $insight=new Insight;
+        //get data from sentimental model
+        $abuse=json_decode(abuse(strip_tags($post->body)));
+        $emotion=json_decode(emotion(strip_tags($post->body)));
+        $sentiment=json_decode(sentiment(strip_tags($post->body)));
+        //abuse type
+        $insight->abuse_type=$abuse->type;
+        $insight->abuse_tags=implode(",",$abuse->tags);
+        //emotions
+        $insight->bored=$emotion->emotion->Bored;
+        $insight->sad=$emotion->emotion->Sad;
+        $insight->angry=$emotion->emotion->Angry;
+        $insight->happy=$emotion->emotion->Happy;
+        $insight->fear=$emotion->emotion->Fear;
+        $insight->excited=$emotion->emotion->Excited;
+        //sentiment
+        $insight->sentiment_type=$sentiment->type;
+        $insight->positive=$sentiment->sentiment->positive;
+        $insight->negative=$sentiment->sentiment->negative;
+        $insight->neutral=$sentiment->sentiment->neutral;
+        //blocking of post
+        if($insight->sentiment_type){
+          $post->status=0;
+          //blocking user
+          $user=User::find($post->user_id);
+          $user->violations=$user->violations+1;
+          //block if violation greater than 3
+          if($user->violations>3){
+            $user->status=0;
+          }
+
+        }
+        //save insight
+        $insight->save();
+        //save post
+        $post->insight_id=$insight->id;
+        $post->save();
         return redirect('/posts')->with('success', 'Post Created');
     }
 
@@ -161,7 +200,47 @@ class PostsController extends Controller
         if($request->hasFile('cover_image')){
             $post->cover_image = $fileNameToStore;
         }
+
+        //insight of a post
+        $insight=Insight::find($post->insight_id);
+
+        $abuse=json_decode(abuse(strip_tags($post->body)));
+        $emotion=json_decode(emotion(strip_tags($post->body)));
+        $sentiment=json_decode(sentiment(strip_tags($post->body)));
+
+        //abuse type
+        $insight->abuse_type=$abuse->type;
+        $insight->abuse_tags=implode(",",$abuse->tags);
+
+        //emotions
+        $insight->bored=$emotion->emotion->Bored;
+        $insight->sad=$emotion->emotion->Sad;
+        $insight->angry=$emotion->emotion->Angry;
+        $insight->happy=$emotion->emotion->Happy;
+        $insight->fear=$emotion->emotion->Fear;
+        $insight->excited=$emotion->emotion->Excited;
+        //sentiment
+        $insight->sentiment_type=$sentiment->type;
+        $insight->positive=$sentiment->sentiment->positive;
+        $insight->negative=$sentiment->sentiment->negative;
+        $insight->neutral=$sentiment->sentiment->neutral;
+        //post id
+
+        //blocking of post
+        if($insight->sentiment_type){
+          $post->status=0;
+          //blocking user
+          $user=User::find($post->user_id);
+          $user->violations=$user->violations+1;
+
+          if($user->violations>3){
+            $user->status=0;
+          }
+
+        }
+
         $post->save();
+        $insight->save();
 
         return redirect('/posts')->with('success', 'Post Updated');
     }
