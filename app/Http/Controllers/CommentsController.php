@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Comment;
 use Illuminate\Http\Request;
 use App\Insight;
+use App\User;
+
 //parallel dots plugin
 require(base_path().'/app/functions/API.php');
 class CommentsController extends Controller
@@ -88,7 +90,7 @@ class CommentsController extends Controller
         $comment->insight_id=$insight->id;
         $comment->uid=auth()->user()->id;
         $comment->save();
-        return "200";
+        return $insight->sentiment_type;
     }
 
     /**

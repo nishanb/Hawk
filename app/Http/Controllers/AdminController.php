@@ -59,7 +59,9 @@ class AdminController extends Controller
     $user = User::find($id);
 
     return view('admin.pages.userposts')->with('posts',$user->posts)
-    ->with('userName',$user->name);
+    ->with('userName',$user->name)
+    ->with('user',$user)
+    ->with('comments',$user->comments);
   }
 
   //listing all comments

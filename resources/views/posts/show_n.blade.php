@@ -23,14 +23,17 @@
             </div>
             <div class="col-xl-12 mb-12 mb-xl-0">
               <div class="col text-right">
-                  {{-- <a href="/posts/{{$post['id']}}/edit" class="btn btn-sm btn-primary">Edit</a> --}}
-                  <span class="text-success">
                     @if(!Auth::guest())
                         @if(Auth::user()['id'] == $post['user_id'])
-                            {!!Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
-                                {{Form::hidden('_method', 'DELETE')}}
-                                {{Form::submit('Delete', ['class' => 'btn btn-sm btn-danger'])}}
-                            {!!Form::close()!!}
+                            <div class="btn-group">
+                              <a href="/posts/{{$post['id']}}/edit" class="btn btn-sm btn-primary mr-2">Edit</a>
+                            </div>
+                            <div class="btn-group">
+                              {!!Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
+                                  {{Form::hidden('_method', 'DELETE')}}
+                                  {{Form::submit('Delete', ['class' => 'btn btn-sm btn-danger'])}}
+                              {!!Form::close()!!}
+                            </div>
                         @endif
                     @endif
                   </span>

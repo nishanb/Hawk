@@ -43,6 +43,7 @@
   <script src="{{asset('admin_assets/vendor/chart.js/dist/Chart.extension.js')}}"></script>
   <!-- Argon JS -->
   <script src="{{asset('admin_assets/js/argon.js?v=1.0.0')}}"></script>
+  <script src="{{asset('admin_assets/js/comment.js')}}"></script>
 
 </body>
 </html>

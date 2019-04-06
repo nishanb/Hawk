@@ -22,7 +22,7 @@
                 <th scope="col">Use Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Total Posts</th>
-                <th scope="col">View Posts</th>
+                <th scope="col">profile</th>
                 <th>violations</th>
                 <th scope="col">Status</th>
                 <th scope="col">Action</th>
@@ -45,7 +45,7 @@
                     <span class="text-center">{{$user->posts->count()}}<span>
                   </td>
                   <td>
-                    <a href="{{url("admin/users/$user[id]/posts")}}" class="btn btn-sm btn-primary">view</a>
+                    <a href="{{url("admin/users/$user[id]")}}" class="btn btn-sm btn-primary">view</a>
                   </td>
                   <td>
                     {{$user->violations}}
