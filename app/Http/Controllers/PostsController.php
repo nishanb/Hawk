@@ -114,7 +114,7 @@ class PostsController extends Controller
         $insight->negative=$sentiment->sentiment->negative;
         $insight->neutral=$sentiment->sentiment->neutral;
         //blocking of post
-        if($insight->sentiment_type){
+        if($insight->sentiment_type==0){
           $post->status=0;
           //blocking user
           $user=User::find($post->user_id);
@@ -123,8 +123,8 @@ class PostsController extends Controller
           if($user->violations>3){
             $user->status=0;
           }
-
-        }
+          $user->save();
+          }
         //save insight
         $insight->save();
         //save post
@@ -142,9 +142,12 @@ class PostsController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
+
         return view('posts.show_n')
         ->with('post', $post)
         ->with('comments',$post->comments);
+
+
     }
 
     /**
@@ -161,7 +164,6 @@ class PostsController extends Controller
         if(auth()->user()->id !==$post->user_id){
             return redirect('/posts')->with('error', 'Unauthorized Page');
         }
-
         return view('posts.edit')->with('post', $post);
     }
 

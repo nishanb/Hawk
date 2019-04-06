@@ -2,6 +2,8 @@
 @section('content')
   <div class="row " style="margin-top:-150px;">
     <!--posts content-->
+    <meta name="postid" content="{{$post->id}}">
+
     <div class="col-xl-12 mb-12 mb-xl-0">
       <div class="card  shadow">
         <div class="card-header border-0 shadow-lg ">
@@ -58,13 +60,17 @@
                 <!-- Projects table -->
                 <table class="table align-items-center table-flush" id="commentsTable">
                   <tbody>
+
                     @foreach ($comments as $comment)
-                      <tr>
-                        <td>
-                          {{$comment['description']}}
-                        </td>
-                      </tr>
+                      @if ($comment->status!=0)
+                        <tr>
+                          <td>
+                            {{$comment->description}}
+                          </td>
+                        </tr>
+                      @endif
                     @endforeach
+
                   </tbody>
                 </table>
               </div>
