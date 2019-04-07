@@ -40,11 +40,9 @@ $(document).ready(function(){
 
 
 //handling button block for users insight
-function toggleUserState() {
-  var userId=$('meta[name=userid]').attr("content");
-  var userStatus=$('meta[name=userstatus]').attr("content");
-  var url="/admin/block/users/"+userId+"/"+userStatus;
-
+function toggleContentState(type,id,status) {
+  var url="/admin/block/"+type+"/"+id+"/"+status;
+  console.log(url);
   window.location.href = url;
 }
 

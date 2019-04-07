@@ -99,7 +99,7 @@
                       </div>
                       <div class="col-auto">
                         <label class="custom-toggle">
-                          <input type="checkbox" id="userStatus" onchange="toggleUserState()" @if ($user->status==1) checked @endif>
+                          <input type="checkbox" id="userStatus" onchange="toggleContentState('users',{{$user->id}},{{$user->status}})" @if ($user->status==1) checked @endif>
                           <span class="custom-toggle-slider rounded-circle"></span>
                         </label>
                       </div>

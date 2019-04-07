@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\User;
 use App\Comment;
+use App\Insight;
+
 use DB;
 
 class AdminController extends Controller
@@ -43,8 +45,20 @@ class AdminController extends Controller
   public function post($id){
       $post=Post::find($id);
 
+
+      $insight=Insight::find($post->insight_id);
+
+      $emotions=[(float)$insight->bored,(float)$insight->sad,(float)$insight->angry,(float)$insight->happy,(float)$insight->fear,(float)$insight->excited];
+      $sentiments=[$insight->positive,$insight->negative,$insight->neutral];
+
+
       return view('admin.pages.post')->with('post',$post)
-      ->with('comments',$post->comments);
+      ->with('comments',$post->comments)
+      ->with('insight',$insight)
+      ->with('user',$post->user)
+      ->with('emotions',$emotions)
+      ->with('sentiments',$sentiments);
+
   }
 
   //listing all the users
