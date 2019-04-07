@@ -42,7 +42,7 @@ class AdminController extends Controller
   }
 
   //viewing post,comment and it's insight
-  public function post($id){
+  public function showpost($id){
       $post=Post::find($id);
 
       $insight=Insight::find($post->insight_id);

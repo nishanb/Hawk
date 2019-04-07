@@ -50,7 +50,7 @@
                   </td>
 
                   <td>
-                    <a href="{{url("admin/post/$comment[post_id]")}}" class="btn btn-sm btn-primary">view</a>
+                    <a href="{{url("admin/posts/$comment[post_id]")}}" class="btn btn-sm btn-primary">view</a>
                   </td>
                 </tr>
                 {{--COmment insight  --}}

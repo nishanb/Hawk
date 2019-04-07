@@ -18,8 +18,8 @@
           </div>
         </div>
 
-        <div class="card-body" style="box-shadow:2px;">
-            <div class="nav-wrapper">
+        <div class="card-body" >
+            <div class="nav-wrapper" style="margin-top:-30px !important;">
                 <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link mb-sm-3 mb-md-0 " id="tabs-icons-text-1-tab" data-toggle="tab" href="#tabs-icons-text-1" role="tab" aria-controls="tabs-icons-text-1" aria-selected="true"><i class="ni ni-cloud-upload-96 mr-2"></i>Post</a>
@@ -32,7 +32,7 @@
                     </li>
                 </ul>
             </div>
-                    <div class="tab-content" id="myTabContent">
+                    <div class="tab-content" id="myTabContent" >
                       {{-- post --}}
                       <div class="tab-pane fade " id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab" >
                           {{-- <p class="description"></p> --}}
@@ -50,7 +50,7 @@
                           </div>
                       </div>
                       {{-- insights --}}
-                      <div class="tab-pane fade active show" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
+                      <div class="tab-pane fade active show" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab" >
                         <div class="card shadow">
                             <div class="card-header border-0 shadow-lg">
                               <div class="row align-items-center">
@@ -62,10 +62,10 @@
                             <div class="card-body">
                                 <div class="card-body">
                                   {{-- post stats --}}
-                                  <div class="row">
+                                  <div class="row" style="margin-top:-30px !important;">
                                     {{--posts  --}}
-                                    <div class="col-xl-3 col-lg-6">
-                                      <div class="card card-stats mb-4 mb-xl-0 shadow">
+                                    <div class="col-xl-3 col-lg-6" >
+                                      <div class="card card-stats mb-4 mb-xl-0 shadow" >
                                         <div class="card-body">
                                           <div class="row">
                                             <div class="col">

@@ -183,7 +183,6 @@
         </div>
       {{-- user posts --}}
       @if (count($user->posts)!=0)
-
         <div class="card shadow mt-3">
           <div class="card-header border-0">
             <div class="row align-items-center">
@@ -229,9 +228,8 @@
                       </td>
                     @endif
                     <td>
-                      <a href="{{url("admin/post/$post[id]")}}" class="btn btn-sm btn-primary">view</a>
+                      <a href="{{url("admin/posts/$post[id]")}}" class="btn btn-sm btn-primary">view</a>
                     </td>
-
                   </tr>
                 @endforeach
               </tbody>
@@ -261,7 +259,7 @@
                   <th scope="col">Comment</th>
                   <th scope="col">Status</th>
                   <th scope="col">Action</th>
-                  <th scope="col">view</th>
+                  <th scope="col">insights</th>
                 </tr>
               </thead>
               <tbody>
@@ -290,7 +288,7 @@
                       </td>
                     @endif
                     <td>
-                      <a href="{{url("admin/post/$post[id]")}}" class="btn btn-sm btn-primary">view</a>
+                      <a href="{{url("admin/post/$comment[id]")}}" class="btn btn-sm btn-primary">view</a>
                     </td>
 
                   </tr>

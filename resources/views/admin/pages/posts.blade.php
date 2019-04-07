@@ -55,7 +55,7 @@
                     </td>
                   @endif
                   <td>
-                    <a href="{{url("admin/post/$post[id]")}}" class="btn btn-sm btn-primary">view</a>
+                    <a href="{{url("admin/posts/$post[id]")}}" class="btn btn-sm btn-primary">view</a>
                   </td>
                 </tr>
               @endforeach

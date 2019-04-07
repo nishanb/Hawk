@@ -41,7 +41,7 @@ Route::prefix('admin')->group(function(){
 
   Route::get('/posts','AdminController@posts');
 
-  Route::get('/post/{id}','AdminController@post');
+  Route::get('/posts/{id}','AdminController@showPost');
 
   Route::get('/users','AdminController@users');
 

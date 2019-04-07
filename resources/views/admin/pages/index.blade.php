@@ -82,7 +82,7 @@
               @foreach ($posts as $post)
               <tr>
                 <td>{{$post->title}}</td>
-                <td><a href="{{url("admin/post/$post->id")}}" class="btn btn-sm btn-primary">view</a></td>
+                <td><a href="{{url("admin/posts/$post->id")}}" class="btn btn-sm btn-primary">view</a></td>
               </tr>
               @endforeach
 
