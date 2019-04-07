@@ -55,7 +55,7 @@ class AdminController extends Controller
   }
 
   //listing a posts of a particular user
-  public function userPosts($id){
+  public function showUser($id){
     $user = User::find($id);
 
     $pos=0;
@@ -85,7 +85,7 @@ class AdminController extends Controller
 
     $data=[$pos,$neg,$neutral];
 
-    return view('admin.pages.userposts')->with('posts',$user->posts)
+    return view('admin.pages.user')->with('posts',$user->posts)
     ->with('userName',$user->name)
     ->with('user',$user)
     ->with('comments',$user->comments)

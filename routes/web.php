@@ -45,7 +45,7 @@ Route::prefix('admin')->group(function(){
 
   Route::get('/users','AdminController@users');
 
-  Route::get('/users/{id}','AdminController@userPosts');
+  Route::get('/users/{id}','AdminController@showUser');
 
   Route::get('/comments','AdminController@comments');
 

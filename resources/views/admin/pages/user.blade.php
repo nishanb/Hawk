@@ -166,7 +166,7 @@
                   </div>
 
                   <div class="card-body" style="">
-                      @if(count($data)!=0)
+                      @if(count($user->posts)!=0 || count($user->comments)!=0)
                       <canvas id="userInsightRadar" width="400" height="280"></canvas>
                       @else
                         <div>

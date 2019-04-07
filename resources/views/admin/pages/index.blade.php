@@ -96,7 +96,7 @@
         <div class="card-header border-0">
           <div class="row align-items-center">
             <div class="col">
-              <h3 class="mb-0">Comments</h3>
+              <h3 class="mb-0">Latest Comments</h3>
             </div>
             <div class="col text-right">
               <a href="{{url("admin/comments")}}" class="btn btn-sm btn-primary">See all</a>
@@ -110,6 +110,7 @@
               <tr>
 
                 <th scope="col">comment</th>
+                <th scope="col">Status</th>
                 <th scope="col">post</th>
               </tr>
             </thead>
@@ -117,6 +118,15 @@
               @foreach ($comments as $comment)
                 <tr>
                   <td>{{$comment->description}}</td>
+                  @if ($comment->status)
+                    <td>
+                      <span class="text-success">Active</span>
+                    </td>
+                  @else
+                    <td>
+                      <span class="text-danger">Blocked</span>
+                    </td>
+                  @endif
                   <td><a href="{{url("admin/post/$comment->post->id")}}" class="btn btn-sm btn-primary">view</a></td>
                 </tr>
               @endforeach
