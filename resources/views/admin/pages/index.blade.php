@@ -111,7 +111,7 @@
 
                 <th scope="col">comment</th>
                 <th scope="col">Status</th>
-                <th scope="col">post</th>
+                <th scope="col">insights</th>
               </tr>
             </thead>
             <tbody>
@@ -127,7 +127,7 @@
                       <span class="text-danger">Blocked</span>
                     </td>
                   @endif
-                  <td><a href="{{url("admin/post/$comment->post->id")}}" class="btn btn-sm btn-primary">view</a></td>
+                  <td><a href="{{url("admin/comments/$comment->id")}}" class="btn btn-sm btn-primary">view</a></td>
                 </tr>
               @endforeach
 

@@ -29,10 +29,11 @@
               </tr>
             </thead>
             <tbody>
+              <?php $x=0?>
               @foreach ($users as $user)
                 <tr>
                   <th scope="row">
-                    {{$user['id']}}
+                    {{++$x}}
                   </th>
                   <td>
                     {{$user['name']}}

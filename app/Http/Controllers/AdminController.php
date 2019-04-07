@@ -36,7 +36,7 @@ class AdminController extends Controller
 
   //listing all user posts
   public function posts(){
-    $posts=Post::all();
+    $posts=Post::orderBy('created_at','desc')->get();
     return view('admin.pages.posts')->with('posts',$posts)
           ->with('data',$this->data);
   }
@@ -69,7 +69,7 @@ class AdminController extends Controller
 
   //listing all the users
   public function users(){
-      $users = User::all();
+      $users = User::orderBy('created_at','desc')->get();
       return view('admin.pages.users')->with('users',$users)
       ->with('data',$this->data);
   }
@@ -114,7 +114,7 @@ class AdminController extends Controller
 
   //listing all comments
   public function comments(){
-      $comments=Comment::all();
+      $comments=Comment::orderBy('created_at','desc')->get();
 
       return view('admin.pages.comments')->with('comments',$comments)
       ->with('data',$this->data);
@@ -145,6 +145,31 @@ class AdminController extends Controller
 
     //return back with notification
     return redirect()->back()->with('status',$type." is blocked");
+  }
+
+  //comment and its insights
+  public function showComment($id){
+    
+    $comment=Comment::find($id);
+
+    $insight=Insight::find($comment->insight_id);
+
+    $emotions=[(float)$insight->bored*100,
+               (float)$insight->sad*100,
+               (float)$insight->angry*100,
+               (float)$insight->happy*100,
+               (float)$insight->fear*100,
+               (float)$insight->excited*100
+             ];
+
+    $sentiments=[$insight->positive*100,
+                 $insight->negative*100,
+                 $insight->neutral*100];
+
+      return view('admin.pages.comment')->with('comment',$comment)
+      ->with('emotions',$emotions)
+      ->with('sentiments',$sentiments);
+      ;
   }
 
 }

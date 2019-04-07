@@ -53,4 +53,6 @@ Route::prefix('admin')->group(function(){
 
   Route::get('block/{type}/{id}/{status}','AdminController@toggleBlockContent');
 
+  Route::get('comments/{id}','AdminController@showComment');
+  
 });

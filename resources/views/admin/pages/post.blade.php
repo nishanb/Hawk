@@ -163,7 +163,7 @@
                                                   <span class="h4 font-weight-bold mb-0 text-success">Not Related to any abusive topic</span>
                                                 @else
                                                   <h5 class="card-title text-uppercase text-muted mb-0">
-                                                  Non Abusive Content
+                                                  Abusive Content
                                                   </h5>
                                                   <span class="h4 font-weight-bold mb-0 text-danger">Realated to {{$insight->abuse_tags}}</span>
                                                 @endif
@@ -266,7 +266,7 @@
                                     <th scope="col">Comment id</th>
                                     <th scope="col">Description</th>
                                     <th scope="col">Status</th>
-                                    <th scop="col">Action</th>
+                                    <th scop="col">Insights</th>
                                   </tr>
                                 </thead>
                                 <tbody>
@@ -287,7 +287,7 @@
                                         </td>
                                       @endif
                                       <td>
-                                        <a href="#" class="btn btn-sm btn-primary">view</a>
+                                        <a href="{{url("admin/comments/$comment->id")}}" class="btn btn-sm btn-primary">view</a>
                                       </td>
                                     </tr>
                                   @endforeach

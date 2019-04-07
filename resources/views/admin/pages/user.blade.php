@@ -288,7 +288,7 @@
                       </td>
                     @endif
                     <td>
-                      <a href="{{url("admin/post/$comment[id]")}}" class="btn btn-sm btn-primary">view</a>
+                      <a href="{{url("admin/comments/$comment[id]")}}" class="btn btn-sm btn-primary">view</a>
                     </td>
 
                   </tr>
