@@ -45,12 +45,18 @@ class AdminController extends Controller
   public function post($id){
       $post=Post::find($id);
 
-
       $insight=Insight::find($post->insight_id);
 
-      $emotions=[(float)$insight->bored,(float)$insight->sad,(float)$insight->angry,(float)$insight->happy,(float)$insight->fear,(float)$insight->excited];
-      $sentiments=[$insight->positive,$insight->negative,$insight->neutral];
-
+      $emotions=[(float)$insight->bored*100,
+                 (float)$insight->sad*100,
+                 (float)$insight->angry*100,
+                 (float)$insight->happy*100,
+                 (float)$insight->fear*100,
+                 (float)$insight->excited*100
+               ];
+      $sentiments=[$insight->positive*100,
+                   $insight->negative*100,
+                   $insight->neutral*100];
 
       return view('admin.pages.post')->with('post',$post)
       ->with('comments',$post->comments)

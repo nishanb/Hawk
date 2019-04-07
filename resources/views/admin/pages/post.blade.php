@@ -1,5 +1,8 @@
 @extends('admin.app_ns')
 @section('content')
+  <meta name="postSentiments" content="{{json_encode($sentiments)}}">
+  <meta name="postEmotions" content="{{json_encode($emotions)}}">
+
   <div class="row " style="margin-top:-150px;">
     <div class="col-xl-12 mb-12 mb-xl-0">
       <div class="card shadow">
@@ -37,7 +40,7 @@
                               <div class="card-header border-0 shadow-lg">
                                 <div class="row align-items-center">
                                   <div class="col">
-                                    <h3 class="mb-0">Posts</h3>
+                                    <h3 class="mb-0">Post Content</h3>
                                   </div>
                                 </div>
                               </div>
@@ -52,12 +55,11 @@
                             <div class="card-header border-0 shadow-lg">
                               <div class="row align-items-center">
                                 <div class="col">
-                                  <h3 class="mb-0">Posts</h3>
+                                  <h3 class="mb-0">Post Insights</h3>
                                 </div>
                               </div>
                             </div>
                             <div class="card-body">
-                                {{--  --}}
                                 <div class="card-body">
                                   {{-- post stats --}}
                                   <div class="row">
@@ -68,7 +70,7 @@
                                           <div class="row">
                                             <div class="col">
                                               <h5 class="card-title text-uppercase text-muted mb-0">Author</h5>
-                                              <span class="h4 font-weight-bold mb-0">{{$user->name}}</span>
+                                              <span class="h4 font-weight-bold mb-0"><a href="{{url("admin/users/$user->id")}}">{{$user->name}}</a></span>
                                             </div>
                                             <div class="col-auto">
                                               <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
@@ -124,7 +126,7 @@
                                       </div>
                                     </div>
                                     {{-- status --}}
-                                    <div class="col-xl-3 col-lg-6">
+                                    <div class="col-xl-3 col-lg-6 ">
                                       <div class="card card-stats mb-4 mb-xl-0 shadow">
                                         <div class="card-body">
                                           <div class="row">
@@ -148,11 +150,99 @@
                                         </div>
                                       </div>
                                     </div>
+                                    {{-- abuse --}}
+                                    <div class="col-xl-6 col-lg-12 mt-3">
+                                      <div class="card card-stats mb-4 mb-xl-0 shadow">
+                                        <div class="card-body">
+                                          <div class="row">
+                                            <div class="col">
+                                                @if ($insight->abuse_type)
+                                                  <h5 class="card-title text-uppercase text-muted mb-0">
+                                                  Non Abusive Content
+                                                  </h5>
+                                                  <span class="h4 font-weight-bold mb-0 text-success">Not Related to any abusive topic</span>
+                                                @else
+                                                  <h5 class="card-title text-uppercase text-muted mb-0">
+                                                  Non Abusive Content
+                                                  </h5>
+                                                  <span class="h4 font-weight-bold mb-0 text-danger">Realated to {{$insight->abuse_tags}}</span>
+                                                @endif
+                                              </h5>
+                                            </div>
+                                            <div class="col-auto">
+                                              <div class="icon icon-shape bg-blue text-white rounded-circle shadow">
+                                                <i class="fas fa-percent"></i>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    {{-- emotions --}}
+                                    <div class="col-xl-6 col-lg-12 mt-3">
+                                      <div class="card card-stats mb-4 mb-xl-0 shadow">
+                                        <div class="card-body">
+                                          <div class="row">
+                                            <div class="col pb-1">
+                                              <h5 class="card-title text-uppercase text-muted mb-0">Emotion</h5>
+                                                <span class="text-success h4">{{$user->name}} is Happy about the post</span>
+                                            </div>
+                                            <div class="col-auto">
+                                              <div class="icon icon-shape bg-green text-white rounded-circle shadow">
+                                                <i class="fas fa-home"></i>
+                                              </div>
+                                            </div>
+
+                                          </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  {{-- post insight charts  --}}
+
+                                  <div class="row mt-3">
+                                    {{--user details  --}}
+                                    <div class="col-xl-6 col-lg-6">
+                                      <div class="card card-stats mb-4 mb-xl-0 shadow">
+                                        <div class="card-header bg-transparent">
+                                          <div class="row align-items-center">
+                                            <div class="col">
+                                              <h6 class="text-uppercase text-light ls-1 mb-1">POST Overview</h6>
+                                              <h2 class=" mb-0">Sentiments</h2>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="card-body" style="">
+                                            <canvas id="postInsightBar" width="400" height="280"></canvas>
+                                        </div>
+
+                                      </div>
+                                    </div>
+                                    {{--comments  --}}
+                                    <div class="col-xl-6 col-lg-6">
+                                      <div class="card card-stats mb-4 mb-xl-0  shadow">
+                                        <div class="card-header bg-transparent ">
+                                          <div class="row align-items-center">
+                                            <div class="col">
+                                              <h6 class="text-uppercase text-light ls-1 mb-1">POST Overview</h6>
+                                              <h2 class=" mb-0">Emotions</h2>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="card-body" style="">
+                                            <canvas id="postInsightRadar" width="400" height="280"></canvas>
+                                        </div>
+
+                                      </div>
+                                    </div>
                                   </div>
 
                                 </div>
 
-                                {{--  --}}
                             </div>
                         </div>
                       </div>
@@ -162,7 +252,7 @@
                             <div class="card-header border-0 shadow-lg">
                               <div class="row align-items-center">
                                 <div class="col">
-                                  <h3 class="mb-0">Posts</h3>
+                                  <h3 class="mb-0">Post Comments</h3>
                                 </div>
                               </div>
                             </div>
@@ -176,7 +266,7 @@
                                     <th scope="col">Comment id</th>
                                     <th scope="col">Description</th>
                                     <th scope="col">Status</th>
-                                    <th scop="col">Insights</th>
+                                    <th scop="col">Action</th>
                                   </tr>
                                 </thead>
                                 <tbody>
@@ -208,7 +298,7 @@
                         </div>
 
                       </div>
-            </div>
+                    </div>
         </div>
       </div>
     </div>

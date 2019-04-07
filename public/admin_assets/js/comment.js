@@ -49,17 +49,63 @@ function toggleContentState(type,id,status) {
 
 //user insight
 var ctx = $('#userInsightRadar');
+try{
+  var myRadarChart = new Chart(ctx, {
+      type: 'pie',
+      data:{
+            labels: ['Positive','negative','neutral'],
+            datasets: [{
+                  data:JSON.parse($('meta[name=usersentiment]').attr("content")),
+                  backgroundColor: ['#4bc0c0','#ff6384','#36a2eb']
+            }]
+          },
+      options: {
+          rotation: 1 * Math.PI,
+      }
+  });
+}catch(e){
+  console.log("user insight");
+}
 
-var myRadarChart = new Chart(ctx, {
-    type: 'pie',
-    data:{
-          labels: ['Positive','negative','neutral'],
-          datasets: [{
-                data:JSON.parse($('meta[name=usersentiment]').attr("content")),
-                backgroundColor: ['#4bc0c0','#ff6384','#36a2eb']
-          }]
-        },
-    options: {
-        rotation: 1 * Math.PI,
-    }
-});
+
+
+//post insights
+//emotions
+var ctx1=$("#postInsightRadar");
+var postInsightData=JSON.parse($('meta[name=postEmotions]').attr("content"));
+
+try{
+  var postRadarChart = new Chart(ctx1, {
+      type: 'radar',
+      data:{
+            labels: ['bored','sad','angry','happy','fear','excited'],
+            datasets: [{
+                  data:postInsightData
+            }]
+          },
+  });
+}catch(e){
+  console.log("Radar Chart")
+}
+
+//sentiment
+var postSentiment=$('#postInsightBar');
+var postSentimentData=JSON.parse($('meta[name=postSentiments]').attr("content"));
+
+try{
+  var postBarChart = new Chart(postSentiment, {
+      type: 'pie',
+      data:{
+            labels: ['Positive','negative','neutral'],
+            datasets: [{
+                  data:postSentimentData,
+                  backgroundColor: ['#4bc0c0','#ff6384','#36a2eb']
+            }]
+          },
+      options: {
+          rotation: 1 * Math.PI,
+      }
+  });
+}catch(e){
+  console.log("Pie chart")
+}
