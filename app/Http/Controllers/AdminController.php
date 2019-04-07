@@ -58,10 +58,38 @@ class AdminController extends Controller
   public function userPosts($id){
     $user = User::find($id);
 
+    $pos=0;
+    $neg=0;
+    $neutral=0;
+
+    foreach ($user->comments as $comment) {
+
+        if($comment->insights->sentiment_type==0){
+          ++$neg;
+        }elseif ($comment->insights->sentiment_type==1) {
+          ++$pos;
+        }else{
+          ++$neutral;
+        }
+    }
+
+    foreach ($user->posts as $comment) {
+        if($comment->insights->sentiment_type==0){
+          ++$neg;
+        }elseif ($comment->insights->sentiment_type==1) {
+          ++$pos;
+        }else{
+          ++$neutral;
+        }
+    }
+
+    $data=[$pos,$neg,$neutral];
+
     return view('admin.pages.userposts')->with('posts',$user->posts)
     ->with('userName',$user->name)
     ->with('user',$user)
-    ->with('comments',$user->comments);
+    ->with('comments',$user->comments)
+    ->with('data',$data);
   }
 
   //listing all comments

@@ -47,3 +47,21 @@ function toggleUserState() {
 
   window.location.href = url;
 }
+
+
+//user insight
+var ctx = $('#userInsightRadar');
+
+var myRadarChart = new Chart(ctx, {
+    type: 'pie',
+    data:{
+          labels: ['Positive','negative','neutral'],
+          datasets: [{
+                data:JSON.parse($('meta[name=usersentiment]').attr("content")),
+                backgroundColor: ['#4bc0c0','#ff6384','#36a2eb']
+          }]
+        },
+    options: {
+        rotation: 1 * Math.PI,
+    }
+});

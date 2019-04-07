@@ -22,7 +22,7 @@ class Post extends Model
     }
 
     public function insights(){
-        return $this->belongsTo('App\Insight');
+        return $this->belongsTo('App\Insight','insight_id');
     }
 
 }

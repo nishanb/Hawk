@@ -20,4 +20,8 @@ class Comment extends Model
     public function user(){
         return $this->belongsTo('App\User','uid');
     }
+
+    public function insights(){
+        return $this->belongsTo('App\Insight','insight_id');
+    }
 }
