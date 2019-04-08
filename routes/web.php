@@ -22,18 +22,24 @@ Route::get('/users/{id}/{name}', function($id, $name){
 });
 */
 
-Route::get('/test','PostsController@test');
+Route::get('/login',function()
+{
+    return view('user.auth.login');
+});
 
-Route::get('/', 'PagesController@index');
+
+
+Auth::routes();
+
+Route::get('/','PagesController@index');
+
+Route::get('/home','PagesController@dashboard');
 
 Route::resource('posts', 'PostsController');
 
 Route::resource('comments', 'CommentsController');
 
-Auth::routes();
-
 Route::get('/dashboard', 'DashboardController@index');
-
 
 Route::post('admin/comments/{id}/create','AdminController@addComment');
 
