@@ -21,6 +21,7 @@
   <div class="main-content">
     <!-- Top navbar -->
     <!-- Header -->
+    @include('user.inc.navbar')
     <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
       <div class="container-fluid">
       </div>
