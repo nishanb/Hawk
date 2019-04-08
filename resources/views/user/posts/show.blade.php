@@ -1,4 +1,4 @@
-@extends('layouts.app_new')
+@extends('user.layouts.app')
 @section('content')
   <div class="row " style="margin-top:-150px;">
     <!--posts content-->

@@ -143,7 +143,7 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
 
-        return view('posts.show_n')
+        return view('user.posts.show')
         ->with('post', $post)
         ->with('comments',$post->comments);
 

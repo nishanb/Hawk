@@ -26,33 +26,35 @@
         <div class="card bg-secondary shadow border-0">
           <div class="card-body px-lg-5 py-lg-5">
             <div class="text-center text-muted mb-4">
-              Login Now
+              Register Now
             </div>
-
-            <form role="form" method="POST" action="{{ route('login') }}">
-              {{ csrf_field() }}
-              {{-- email --}}
+            <form role="form">
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Name" type="text">
+                </div>
+              </div>
               <div class="form-group">
                 <div class="input-group input-group-alternative mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                   </div>
-                  <input class="form-control" placeholder="Email" type="email" id="email" name="email" value="{{ old('email') }}" required autofocus>
+                  <input class="form-control" placeholder="Email" type="email">
                 </div>
               </div>
-              {{-- password --}}
               <div class="form-group">
                 <div class="input-group input-group-alternative">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                   </div>
-                  <input id="password" class="form-control" placeholder="Password" type="password" name="password" required>
+                  <input class="form-control" placeholder="Password" type="password">
                 </div>
               </div>
-              {{-- auto remember me --}}
-              <input type="checkbox" name="remember" checked hidden>
               <div class="text-center">
-                <button type="submit" class="btn btn-primary mt-4">Login</button>
+                <button type="button" class="btn btn-primary mt-4">Create account</button>
               </div>
             </form>
           </div>
