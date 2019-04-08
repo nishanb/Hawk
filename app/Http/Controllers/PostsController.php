@@ -52,7 +52,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        return view('user.posts.create');
     }
 
     /**
@@ -164,7 +164,7 @@ class PostsController extends Controller
         if(auth()->user()->id !==$post->user_id){
             return redirect('/posts')->with('error', 'Unauthorized Page');
         }
-        return view('posts.edit')->with('post', $post);
+        return view('user.posts.edit')->with('post', $post);
     }
 
     /**

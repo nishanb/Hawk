@@ -43,5 +43,9 @@
   <!-- Argon JS -->
   <script src="{{asset('admin_assets/js/argon.js?v=1.0.0')}}"></script>
   <script src="{{asset('admin_assets/js/comment.js')}}"></script>
+  <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+  <script>
+      CKEDITOR.replace( 'article-ckeditor' );
+  </script>
 </body>
 </html>
