@@ -1030,27 +1030,11 @@ var SalesChart = (function() {
 						ticks: {
 							callback: function(value) {
 								if (!(value % 10)) {
-									return '$' + value + 'k';
+									return  value + '%';
 								}
 							}
 						}
 					}]
-				},
-				tooltips: {
-					callbacks: {
-						label: function(item, data) {
-							var label = data.datasets[item.datasetIndex].label || '';
-							var yLabel = item.yLabel;
-							var content = '';
-
-							if (data.datasets.length > 1) {
-								content += '<span class="popover-body-label mr-auto">' + label + '</span>';
-							}
-
-							content += '<span class="popover-body-value">$' + yLabel + 'k</span>';
-							return content;
-						}
-					}
 				}
 			},
 			data: {
@@ -1066,16 +1050,16 @@ var SalesChart = (function() {
 
 		$chart.data('chart', salesChart);
 
-		/*Updating the bar chart with updated data in every second. */
-		setInterval(function() {
-		  //updatedDataSet = [Math.random(), Math.random(), Math.random(), Math.random(),Math.random(), Math.random(), Math.random(), Math.random(),Math.random(), Math.random(), Math.random()];
-			salesChart.data.datasets[0].data.push(Math.random());
-			salesChart.data.datasets[0].data.shift();
-			//updatedDataSet.push(Math.random());
-			console.log(salesChart.data.datasets[0].data)
-		  //salesChart.data.datasets.push({data: updatedDataSet});
-		  salesChart.update();
-		}, 500);
+		// /*Updating the bar chart with updated data in every second. */
+		// setInterval(function() {
+		//   //updatedDataSet = [Math.random(), Math.random(), Math.random(), Math.random(),Math.random(), Math.random(), Math.random(), Math.random(),Math.random(), Math.random(), Math.random()];
+		// 	salesChart.data.datasets[0].data.push(Math.random());
+		// 	salesChart.data.datasets[0].data.shift();
+		// 	//updatedDataSet.push(Math.random());
+		// 	console.log(salesChart.data.datasets[0].data)
+		//   //salesChart.data.datasets.push({data: updatedDataSet});
+		//   salesChart.update();
+		// }, 500);
 
 	};
 
