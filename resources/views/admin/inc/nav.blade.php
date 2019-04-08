@@ -30,6 +30,7 @@
             </span>
           </div>
         </a>
+
         <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
           <div class=" dropdown-header noti-title">
             <h6 class="text-overflow m-0">Welcome!</h6>
@@ -111,7 +112,7 @@
         </li>
          <li class="nav-item">
           <a class="nav-link" href="{{url("admin/profile")}}">
-            <i class="ni ni-single-02 text-red"></i> Profile
+            <i class="ni ni-circle-08 text-green"></i> Profile
           </a>
         </li>
         {{--
