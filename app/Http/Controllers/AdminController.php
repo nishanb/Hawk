@@ -149,7 +149,7 @@ class AdminController extends Controller
 
   //comment and its insights
   public function showComment($id){
-    
+
     $comment=Comment::find($id);
 
     $insight=Insight::find($comment->insight_id);
@@ -170,6 +170,12 @@ class AdminController extends Controller
       ->with('emotions',$emotions)
       ->with('sentiments',$sentiments);
       ;
+  }
+
+  public function profile()
+  {
+      $user=User::find(auth()->user()->id);
+      return view('admin.pages.profile')->with('user',$user);
   }
 
 }

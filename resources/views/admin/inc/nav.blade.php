@@ -109,11 +109,12 @@
             <i class="ni ni-single-02 text-yellow"></i> Users
           </a>
         </li>
-        {{-- <li class="nav-item">
-          <a class="nav-link" href="./examples/tables.html">
-            <i class="ni ni-bullet-list-67 text-red"></i> Tables
+         <li class="nav-item">
+          <a class="nav-link" href="{{url("admin/profile")}}">
+            <i class="ni ni-single-02 text-red"></i> Profile
           </a>
         </li>
+        {{--
         <li class="nav-item">
           <a class="nav-link" href="./examples/login.html">
             <i class="ni ni-key-25 text-info"></i> Login
