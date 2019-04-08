@@ -33,8 +33,6 @@
     </div>
   </div>
 
-
-
   <!-- Argon Scripts -->
   <!-- Core -->
   <script src="{{asset('admin_assets/vendor/jquery/dist/jquery.min.js')}}"></script>

@@ -183,11 +183,13 @@
 
   <!-- Argon Scripts -->
   <!-- Core -->
+  <!-- Argon Scripts -->
+  <!-- Core -->
   <script src="{{asset('admin_assets/vendor/jquery/dist/jquery.min.js')}}"></script>
-  <script src="{{asset('admin_assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+  <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- Optional JS -->
 
-  <!-- Argon JS -->
-  <script src="{{asset('admin_assets/js/argon.js?v=1.0.0')}}"></script>
 
 </body>
 </html>
