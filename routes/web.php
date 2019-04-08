@@ -34,8 +34,14 @@ Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index');
 
+
+Route::post('admin/comments/{id}/create','AdminController@addComment');
+
 //Admin Routes
-Route::prefix('admin')->group(function(){
+Route::group([
+              'prefix'=>'admin',
+              'middleware'=>'admin'
+              ],function(){
 
   Route::get('/','AdminController@index');
 
@@ -48,8 +54,6 @@ Route::prefix('admin')->group(function(){
   Route::get('/users/{id}','AdminController@showUser');
 
   Route::get('/comments','AdminController@comments');
-
-  Route::post('/comments/{id}/create','AdminController@addComment');
 
   Route::get('block/{type}/{id}/{status}','AdminController@toggleBlockContent');
 
