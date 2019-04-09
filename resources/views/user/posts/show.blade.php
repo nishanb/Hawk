@@ -1,6 +1,6 @@
 @extends('user.layouts.app')
 @section('content')
-  <div class="row " style="margin-top:-100px;">
+  <div class="row " style="margin-top:-20px;">
     <!--posts content-->
     <meta name="postid" content="{{$post->id}}">
 

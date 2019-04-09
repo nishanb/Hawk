@@ -1,6 +1,6 @@
 @extends('user.layouts.app')
 @section('content')
-  <div class="row " style="margin-top:-100px;">
+  <div class="row " style="margin-top:-20px;">
     <div class="col-xl-12 mb-12 mb-xl-0">
       <div class="card  shadow">
         <div class="card-header border-0 shadow-lg ">
@@ -16,6 +16,7 @@
         <div class="card-body ">
           <div class="row align-items-center">
             <div class="col-xl-12 mb-12 mb-xl-0">
+              @include('notification.messages')
               {!! Form::open(['action' => 'PostsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                   <div class="form-group">
                       {{Form::label('title', 'Title')}}

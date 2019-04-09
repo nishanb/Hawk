@@ -31,7 +31,7 @@
           <div class="col-lg-7 col-md-10">
             <h1 class="display-2 text-white">Hello {{auth()->user()->name}} !</h1>
             <p class="text-white mt-0 mb-5">Welcome to Hawk! You are safe here. This is your profile page. You can see the progress you've made . <span class="text-bold"></span></p>
-            <a href="" class="btn btn-info">Edit profile</a>
+            <a href="{{url("/posts/create")}}" class="btn btn-info">Write Post</a>
           </div>
         </div>
       </div>

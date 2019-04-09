@@ -22,18 +22,15 @@ Route::get('/users/{id}/{name}', function($id, $name){
 });
 */
 
-Route::get('/login',function()
-{
-    return view('user.auth.login');
-});
-
 
 
 Auth::routes();
 
 Route::get('/','PagesController@index');
 
-Route::get('/home','PagesController@dashboard');
+Route::get('/home','PagesController@index');
+
+Route::get('/about','PagesController@about');
 
 Route::resource('posts', 'PostsController');
 
