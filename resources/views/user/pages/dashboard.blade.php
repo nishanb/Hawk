@@ -22,7 +22,11 @@
     <!-- Top navbar -->
     @include('user.inc.navbar')
     <!-- Header -->
-    <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url({{asset('admin_assets/img/theme/profile-cover.jpg')}}); background-size: cover; background-position: center top;">
+    @if (auth()->user()->violations<=5)
+      <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url({{asset('admin_assets/img/theme/profile-cover.jpg')}}); background-size: cover; background-position: center top;">
+    @else
+      <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url({{asset('admin_assets/img/theme/user-red.png')}}); background-size: cover; background-position: center top;">
+    @endif
       <!-- Mask -->
       <span class="mask bg-gradient-default opacity-3"></span>
       <!-- Header container -->
@@ -30,8 +34,14 @@
         <div class="row">
           <div class="col-lg-7 col-md-10">
             <h1 class="display-2 text-white">Hello {{auth()->user()->name}} !</h1>
-            <p class="text-white mt-0 mb-5">Welcome to Hawk! You are safe here. This is your profile page. You can see the progress you've made . <span class="text-bold"></span></p>
-            <a href="{{url("/posts/create")}}" class="btn btn-info">Write Post</a>
+            @if (auth()->user()->violations<=5)
+              <p class="text-white mt-0 mb-5">Welcome to Hawk! You are safe here. This is your profile page. You can see the progress you've  made {{auth()->user()->violations}} violations.<br></p>
+              <a href="{{url("/posts/create")}}" class="btn btn-info">Write Post</a>
+            @else
+              <p class="text-white mt-0 mb-5">Welcome to Hawk! You are safe here. This is your profile page. You can see the progress <br> <h4 class="text-bold text-white">
+                Your Account is blocked
+              </h4></p>
+            @endif
           </div>
         </div>
       </div>

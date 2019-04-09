@@ -62,7 +62,7 @@
         <div class="col-lg-7 col-md-10">
           <h1 class="display-2 text-white">Hello {{$user->name}} !</h1>
           <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>
-
+          <h3>Your Account is Blocked</h3>
         </div>
       </div>
     </div>

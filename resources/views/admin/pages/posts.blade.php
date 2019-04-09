@@ -29,6 +29,7 @@
                 <th scope="col">writer</th>
                 <th scope="col">Status</th>
                 <th scope="col">view</th>
+                <th scope="col">delete</th>
               </tr>
             </thead>
             <tbody>
@@ -56,6 +57,14 @@
                   @endif
                   <td>
                     <a href="{{url("admin/posts/$post[id]")}}" class="btn btn-sm btn-primary">view</a>
+                  </td>
+                  <td>
+                  <a class="btn btn-sm ">
+                    {!!Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST'])!!}
+                        {{Form::hidden('_method', 'DELETE')}}
+                        {{Form::submit('Delete', ['class' => 'btn btn-sm btn-danger'])}}
+                    {!!Form::close()!!}
+                  </a>
                   </td>
                 </tr>
               @endforeach

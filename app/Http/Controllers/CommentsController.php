@@ -133,8 +133,17 @@ class CommentsController extends Controller
      * @param  \App\comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(comment $comment)
+    public function destroy($id)
     {
-        //
+      $post = Comment::find($id);
+      // Check for correct user
+      if(auth()->user()->id==$post->user_id || auth()->user()->isAdmin ){
+
+        $post->delete();
+        return back()->with('success', 'Post Removed');
+
+      }
+
+      return back()->with('error', 'Unauthorized Request');
     }
 }
