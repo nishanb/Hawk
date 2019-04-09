@@ -10,10 +10,10 @@
       <div class="col-xl-6">
         <ul class="nav nav-footer justify-content-center justify-content-xl-end">
           <li class="nav-item">
-            <a href="" class="nav-link" target="_blank">GitHub</a>
+            <a href="http://github.com/nishanb/hawk" class="nav-link" target="_blank">GitHub</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link" target="_blank">About Us</a>
+            <a href="{{url("/about")}}" class="nav-link" target="_blank">About Us</a>
           </li>
           <li class="nav-item">
             <a href="{{url("/posts")}}" class="nav-link" target="_blank">Blog</a>
