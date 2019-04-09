@@ -15,7 +15,10 @@ class Blocked
      */
     public function handle($request, Closure $next)
     {
-      if (auth()->user()->violations<=5) {
+      if (!auth()->check()) {
+        return $next($request);
+      }
+      elseif (auth()->user()->status) {
         return $next($request);
       }
 

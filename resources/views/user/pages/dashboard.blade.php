@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
-  <meta name="author" content="Creative Tim">
-  <title>Blogger Admin</title>
+  <meta name="description" content="Safe blog monitoring for suspecious activity">
+  <meta name="author" content="Nishan B">
+  <title>Hawk - you are safe here</title>
   <!-- Favicon -->
   <link href="{{asset('admin_assets/img/brand/favicon.png')}}" rel="icon" type="image/png">
   <!-- Fonts -->
@@ -34,7 +34,7 @@
         <div class="row">
           <div class="col-lg-7 col-md-10">
             <h1 class="display-2 text-white">Hello {{auth()->user()->name}} !</h1>
-            @if (auth()->user()->violations<=5)
+            @if (auth()->user()->status)
               <p class="text-white mt-0 mb-5">Welcome to Hawk! You are safe here. This is your profile page. You can see the progress you've  made {{auth()->user()->violations}} violations.<br></p>
               <a href="{{url("/posts/create")}}" class="btn btn-info">Write Post</a>
             @else

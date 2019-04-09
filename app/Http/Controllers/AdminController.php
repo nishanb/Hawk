@@ -137,7 +137,6 @@ class AdminController extends Controller
     //toggle status
     if($status){
       $data->status=0;
-
     }
     else {
       $data->status=1;

@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+  <meta name="csrf-content" content="{{Session::token()}}">
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="csrf-content" content="{{Session::token()}}">
-  <title>Blogger Admin</title>
+  <meta name="description" content="You are safe here with secure blog">
+  <meta name="author" content="Nishan B">
+  <title>Hawk Admin</title>
   <!-- Favicon -->
   <link href="{{asset('admin_assets/img/brand/favicon.png')}}" rel="icon" type="image/png">
   <!-- Fonts -->
