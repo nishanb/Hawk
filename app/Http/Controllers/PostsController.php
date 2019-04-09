@@ -25,6 +25,7 @@ class PostsController extends Controller
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
+        $this->middleware('blocked');
 
     }
 
@@ -256,19 +257,20 @@ class PostsController extends Controller
     public function destroy($id)
     {
         $post = Post::find($id);
-
         // Check for correct user
-        if(auth()->user()->id !==$post->user_id){
-            return redirect('/posts')->with('error', 'Unauthorized Page');
+        if(auth()->user()->id==$post->user_id || auth()->user()->isAdmin ){
+
+          if($post->cover_image != 'noimage.jpg'){
+              // Delete Image
+              Storage::delete('public/cover_images/'.$post->cover_image);
+          }
+          $post->delete();
+          return back()->with('success', 'Post Removed');
+
         }
 
-        if($post->cover_image != 'noimage.jpg'){
-            // Delete Image
-            Storage::delete('public/cover_images/'.$post->cover_image);
-        }
+        return back()->with('error', 'Unauthorized Request');
 
-        $post->delete();
-        return redirect('/posts')->with('success', 'Post Removed');
     }
 
 

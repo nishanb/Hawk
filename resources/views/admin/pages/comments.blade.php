@@ -22,6 +22,7 @@
                 <th scope="col">Description</th>
                 <th scope="col">Status</th>
                 <th scope="col">Insights</th>
+                <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -45,6 +46,14 @@
                   @endif
                   <td>
                     <a href="{{url("admin/comments/$comment[id]")}}" class="btn btn-sm btn-primary">view</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-sm ">
+                      {!!Form::open(['action' => ['CommentsController@destroy', $comment->id], 'method' => 'POST'])!!}
+                          {{Form::hidden('_method', 'DELETE')}}
+                          {{Form::submit('Delete', ['class' => 'btn btn-sm btn-danger'])}}
+                      {!!Form::close()!!}
+                    </a>
                   </td>
                 </tr>
 
