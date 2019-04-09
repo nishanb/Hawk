@@ -55,7 +55,7 @@
   <!-- Header -->
   <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 700px; background-image: url({{asset("admin_assets/img/theme/profile-cover.jpg")}}); background-size: cover; background-position: center top;">
     <!-- Mask -->
-    <span class="mask bg-gradient-default opacity-8"></span>
+    <span class="mask bg-gradient-default opacity-4"></span>
     <!-- Header container -->
     <div class="container-fluid d-flex align-items-center" style="margin-top:-150px;">
       <div class="row">
@@ -76,7 +76,7 @@
             <div class="col-lg-3 order-lg-2">
               <div class="card-profile-image">
                 <a href="#">
-                  <img src="https://cdn.dribbble.com/users/156547/screenshots/2616525/sammy-husky.gif" width="150px" height="150px" class="rounded-circle">
+                  <img src="{{asset("admin_assets/img/theme/team-4-800x800.jpg")}}" width="150px" height="150px" class="rounded-circle">
                 </a>
               </div>
             </div>

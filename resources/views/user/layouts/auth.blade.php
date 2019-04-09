@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
-  <meta name="author" content="Creative Tim">
-  <title>Argon Dashboard - Free Dashboard for Bootstrap 4</title>
+  <meta name="description" content="Safe blog monitoring for suspecious activity">
+  <meta name="author" content="Nishan B">
+  <title>Hawk - you are safe here</title>
   <!-- Favicon -->
   <link href="{{asset("admin_assets/img/brand/favicon.png")}}" rel="icon" type="image/png">
   <!-- Fonts -->
