@@ -185,7 +185,7 @@
                                           <div class="row">
                                             <div class="col pb-1">
                                               <h5 class="card-title text-uppercase text-muted mb-0">Emotion</h5>
-                                                <span class="text-success h4">{{$user->name}} is Happy about the post</span>
+                                                <span class="text-success h4">{{$user->name}} is <span class="text-capitalize">{{$emotion[0]}}</span> about the post</span>
                                             </div>
                                             <div class="col-auto">
                                               <div class="icon icon-shape bg-green text-white rounded-circle shadow">

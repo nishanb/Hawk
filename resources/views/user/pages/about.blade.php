@@ -23,15 +23,15 @@
 
 <!-- PRE LOADER -->
 
-{{-- <div class="preloader">
+<div class="preloader">
      <div class="sk-spinner sk-spinner-wordpress">
           <span class="sk-inner-circle"></span>
      </div>
-</div> --}}
+</div>
 
 <!-- Navigation section  -->
 
-<div class="navbar navbar-default navbar-static-top" role="navigation">
+{{-- <div class="navbar navbar-default navbar-static-top" role="navigation">
      <div class="container">
 
           <div class="navbar-header">
@@ -48,7 +48,7 @@
                     <li class="active"><a  href="{{url("/login")}}">Login</a></li>
           </div>
   </div>
-</div>
+</div> --}}
 
 <!-- Home Section -->
 
@@ -139,11 +139,11 @@
                 <div class="" ontouchstart="this.classList.toggle('hover');">
                     <div class="">
                         <div class="frontside">
-                            <div class="card">
+                            <div class="card shadow-lg">
                                 <div class="card-body text-center">
                                     <p><img class=" img-fluid" src="{{asset("about_assets/images/2.png")}}" alt="card image"></p>
                                     <h4 class="card-title">Nishan B</h4>
-                                    <p class="card-text">Student at SCEM <br>Developer</p>
+                                    <p class="card-text">Student at SCEM <br>Team Leader</p>
                                     <a href="http://github.com/nishanb" class="btn btn-primary btn-sm"><i class="fa fa-github"></i></a>
                                 </div>
                             </div>

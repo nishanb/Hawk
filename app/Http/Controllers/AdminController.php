@@ -58,12 +58,24 @@ class AdminController extends Controller
                    $insight->negative*100,
                    $insight->neutral*100];
 
+        //finding emotion of a content
+        $emotions_array=['bored'=>(float)$insight->bored,
+                      'sad'=>(float)$insight->sad,
+                      'angry'=>(float)$insight->angry,
+                      'happy'=>(float)$insight->happy,
+                      'fear'=>(float)$insight->fear,
+                      'excited'=>(float)$insight->excited
+                    ];
+        $emotions_max=max($emotions_array);
+        $emotion=array_keys($emotions_array,$emotions_max);
+
       return view('admin.pages.post')->with('post',$post)
       ->with('comments',$post->comments)
       ->with('insight',$insight)
       ->with('user',$post->user)
       ->with('emotions',$emotions)
-      ->with('sentiments',$sentiments);
+      ->with('sentiments',$sentiments)
+      ->with('emotion',$emotion);
 
   }
 
@@ -168,9 +180,23 @@ class AdminController extends Controller
                  $insight->negative*100,
                  $insight->neutral*100];
 
+   //finding emotion of a content
+   $emotions_array=['bored'=>(float)$insight->bored,
+                     'sad'=>(float)$insight->sad,
+                     'angry'=>(float)$insight->angry,
+                     'happy'=>(float)$insight->happy,
+                     'fear'=>(float)$insight->fear,
+                     'excited'=>(float)$insight->excited
+                   ];
+   $emotions_max=max($emotions_array);
+   $emotion=array_keys($emotions_array,$emotions_max);
+
+
+
       return view('admin.pages.comment')->with('comment',$comment)
       ->with('emotions',$emotions)
-      ->with('sentiments',$sentiments);
+      ->with('sentiments',$sentiments)
+      ->with('emotion',$emotion);
       ;
   }
 
