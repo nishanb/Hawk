@@ -60,7 +60,7 @@
                <div class="col-md-12 col-sm-12">
                     <h1>Hello! This is HAWK</h1>
                     <h4>You are safe here</h4>
-                    <a href="#blog" class="smoothScroll btn btn-default">Discover More</a>
+                    <a href="{{url("/login")}}" class="smoothScroll btn btn-default">Signup Now</a>
                </div>
 
           </div>
@@ -96,7 +96,7 @@
                                 <div class="card-body text-center">
                                     <p><img class=" img-fluid" src="{{asset("about_assets/images/1.png")}}" alt="card image"></p>
                                     <h4 class="card-title">Shailesh Shetty</h4>
-                                    <p class="card-text">Asst.Proffesor at SCEM <br> Project Guide</p>
+                                    <p class="card-text">Asst.Professor at SCEM <br> Project Guide</p>
                                     <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-link"></i></a>
                                 </div>
                             </div>
@@ -143,7 +143,7 @@
                                 <div class="card-body text-center">
                                     <p><img class=" img-fluid" src="{{asset("about_assets/images/2.png")}}" alt="card image"></p>
                                     <h4 class="card-title">Nishan B</h4>
-                                    <p class="card-text">Student at SCEM <br>Devloper</p>
+                                    <p class="card-text">Student at SCEM <br>Developer</p>
                                     <a href="http://github.com/nishanb" class="btn btn-primary btn-sm"><i class="fa fa-github"></i></a>
                                 </div>
                             </div>
@@ -192,7 +192,7 @@
                                 <div class="card-body text-center">
                                     <p><img class=" img-fluid" src="{{asset("about_assets/images/4.png")}}" alt="card image"></p>
                                     <h4 class="card-title">Megha KB</h4>
-                                    <p class="card-text">Student at SCEM <br>Web Devloper</p>
+                                    <p class="card-text">Student at SCEM <br>Web Developer</p>
 
                                 </div>
                             </div>
@@ -215,7 +215,7 @@
                                 <div class="card-body text-center">
                                     <p><img class=" img-fluid" src="{{asset("about_assets/images/3.png")}}" alt="card image"></p>
                                     <h4 class="card-title">Nitin Thomas</h4>
-                                    <p class="card-text">Student at SCEM <br>UI/UX Desginer</p>
+                                    <p class="card-text">Student at SCEM <br>UI/UX Designer</p>
 
                                 </div>
                             </div>
@@ -237,7 +237,7 @@
                                 <div class="card-body text-center">
                                     <p><img class=" img-fluid" src="{{asset("about_assets/images/5.png")}}" alt="card image"></p>
                                     <h4 class="card-title">Navya Prabhu M</h4>
-                                    <p class="card-text">Student at SCEM <br>Devloper</p>
+                                    <p class="card-text">Student at SCEM <br>Developer</p>
 
                                 </div>
                             </div>
