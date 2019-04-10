@@ -30,7 +30,8 @@ $(document).ready(function(){
               if(data!=0)
                 updateComment(comment);
               else {
-                //alert("offensive content");
+                $('.cst').val("");
+                alert("offensive content");
               }
               console.log(data);
             }

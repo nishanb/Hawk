@@ -26,7 +26,10 @@
 </footer>
 <!-- Argon Scripts -->
 <!-- Core -->
-<script src="{{asset("admin_assets/vendor/jquery/dist/jquery.min.js")}}"></script>
-<script src="{{asset("admin_assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js")}}"></script>
+<script src="{{asset('admin_assets/vendor/jquery/dist/jquery.min.js')}}"></script>
+<script src="{{asset('admin_assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+<!-- Optional JS -->
+<script src="{{asset('admin_assets/vendor/chart.js/dist/Chart.min.js')}}"></script>
+<script src="{{asset('admin_assets/vendor/chart.js/dist/Chart.extension.js')}}"></script>
 <!-- Argon JS -->
-<script src="{{asset("admin_assets/js/argon.js?v=1.0.0")}}"></script>
+<script src="{{asset('admin_assets/js/argon.js?v=1.0.0')}}"></script>

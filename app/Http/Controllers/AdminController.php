@@ -130,8 +130,10 @@ class AdminController extends Controller
       $data=Comment::find($id);
     }else {
       $data=User::find($id);
+      if($status==0){
+        $data->violations=3;
+      }
     }
-
     //toggle status
     if($status){
       $data->status=0;
