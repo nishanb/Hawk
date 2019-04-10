@@ -18,7 +18,7 @@
           <div class="row">
 
             @foreach ($posts as $post)
-                <div class="col-lg-4">
+                <div class="col col-lg-6">
                   <div class="card mt-2" style="width: 24rem;">
                     <div class="card-body">
                       <img class="card-img-top" src="/storage/cover_images/{{$post->cover_image}}" width="150px;" height="200px;">

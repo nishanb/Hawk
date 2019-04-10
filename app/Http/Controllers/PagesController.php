@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     public function index(){
+      if (!auth()->check()) {
+          return view('user.pages.about');
+      }
         return redirect("/dashboard");
     }
 
