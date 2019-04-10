@@ -22,7 +22,7 @@
     <!-- Top navbar -->
     @include('user.inc.navbar')
     <!-- Header -->
-    @if (auth()->user()->violations<=5)
+    @if (auth()->user()->status)
       <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url({{asset('admin_assets/img/theme/profile-cover.jpg')}}); background-size: cover; background-position: center top;">
     @else
       <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url({{asset('admin_assets/img/theme/user-red.png')}}); background-size: cover; background-position: center top;">
