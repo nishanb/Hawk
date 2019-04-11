@@ -37,6 +37,7 @@
   <!-- Core -->
   @include('user.inc.footer')
 
+<!-- Created By Nishan B http://github/nishanb -->
   <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
   <script>
       CKEDITOR.replace( 'article-ckeditor' );

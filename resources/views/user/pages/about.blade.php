@@ -271,9 +271,13 @@
           </div>
      </div>
 </footer>
+
+<!-- Created By Nishan B http://github/nishanb -->
+
 <!-- Back top -->
 <a href="#back-top" class="go-top"><i class="fa fa-angle-up"></i></a>
 <!--cutom style-->
+
 <style>
      /* FontAwesome for working BootSnippet :> */
 
@@ -407,7 +411,7 @@
   }
 
 </style>
-
+{{-- Created By nishanb  --}}
 <!-- SCRIPTS -->
 
 <script src="{{asset("about_assets/js/jquery.js")}}"></script>
@@ -418,5 +422,6 @@
 <script src="{{asset("about_assets/js/smoothscroll.js")}}"></script>
 <script src="{{asset("about_assets/js/custom.js")}}"></script>
 
+<!-- Created By Nishan B http://github/nishanb -->
 </body>
 </html>

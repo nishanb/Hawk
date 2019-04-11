@@ -7,7 +7,7 @@
 		$url = 'https://apis.paralleldots.com/v4/'.$par;
 
 		$data = array();
-		$data['api_key'] = env('PARALLEL_DOTS_API_KEY');
+		$data['api_key'] ='WgYznF8PCS8WTizNHOBtmVJV5Myy34jG180RUtFPQDs';
 		$data['text'] = $text;
 
 		$ch = curl_init($url);

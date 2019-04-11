@@ -1,7 +1,7 @@
 <nav class="navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark shadow">
   <div class="container px-4">
     <a class="navbar-brand" href="/">
-      <img src="{{asset("admin_assets/img/brand/blue.png")}}" />
+      <img height="450px"  src="{{asset("admin_assets/img/brand/white.png")}}" />
     </a>
 
     <!--user-->
@@ -12,7 +12,7 @@
           <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="media align-items-center">
               <span class="avatar avatar-sm rounded-circle">
-                <img  src="{{asset("admin_assets/img/theme/team-4-800x800.jpg")}}">
+                <img  src="{{asset("admin_assets/img/theme/team-4-800x800.jpg")}}" alt="Hawk">
               </span>
             </div>
           </a>
@@ -84,7 +84,7 @@
         <div class="row">
           <div class="col-6 collapse-brand">
             <a href="/">
-              <img src="{{asset("admin_assets/img/brand/blue.png")}}">
+              <img src="{{asset("admin_assets/img/brand/white.png")}}" alt="Hawk">
             </a>
 
           </div>
