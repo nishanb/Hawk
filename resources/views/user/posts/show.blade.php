@@ -83,8 +83,14 @@
           <div class="row align-items-center ">
             <div class="col col-xl-12 mb-12 mb-xl-0 mt-2">
               @if (auth()->check())
-                <textarea name="name" rows="2" cols="20" class="form-control cst" placeholder="write comment"></textarea>
-                <input type="submit"  name="sub_btn" value="Submit" class="btn btn-sm btn-primary mt-2 csb" onclick="">
+                {!! Form::open(['action' => 'CommentsController@store', 'method' => 'POST']) !!}
+                    <div class="form-group">
+                        {{Form::text('comment', '', ['class' => 'form-control', 'placeholder' => 'write your comment'])}}
+                        <input type="text" name="post_id" value="{{$post->id}}" hidden>
+                    </div>
+                    {{Form::submit('Submit', ['class'=>'btn btn-sm btn-primary mt-2 csb'])}}
+                {!! Form::close() !!}
+
               @else
                 <p class="text-center"><a href="{{url("/login")}}">Login</a> to comment</p>
               @endif
