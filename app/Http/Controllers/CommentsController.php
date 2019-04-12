@@ -90,7 +90,8 @@ class CommentsController extends Controller
         $comment->insight_id=$insight->id;
         $comment->uid=auth()->user()->id;
         $comment->save();
-        return $insight->sentiment_type;
+        //return $insight->sentiment_type;
+        return back()->with('messgae',$insight->sentiment_type);
     }
 
     /**
