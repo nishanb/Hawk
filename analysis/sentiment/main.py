@@ -69,8 +69,6 @@ negative_data=negative_data+pd.read_csv("datasets/en.csv").words.tolist()
 #feature extraction
 negative_features = [(word_feats(neg), 'neg') for neg in negative_data]
 positive_features = [(word_feats(pos), 'pos') for pos in positive_data]
-#
-
 
 #training
 train_set = negative_features + positive_features
