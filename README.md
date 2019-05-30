@@ -2,7 +2,13 @@
  Built with laravel 5 and python 
 
 ## Getting started
+Admin Crdentials
+user: admin@hawkblog.in
+password: admin123
 
+User Credentials
+user: user@hawkblog.in
+password: user123
 
 ### Clone existing repository
 
