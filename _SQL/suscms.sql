@@ -70,10 +70,6 @@ INSERT INTO `comments` (`id`, `post_id`, `description`, `created_at`, `updated_a
 (17, 2, 'good one', '2019-04-06 07:33:30', '2019-04-06 07:33:30', 1, 2, 9),
 (16, 2, 'you go mother fucker', '2019-04-06 07:29:54', '2019-04-06 07:29:54', 0, 2, 8),
 (15, 2, 'very much informative', '2019-04-06 07:23:11', '2019-04-06 07:23:11', 1, 2, 7),
-(22, 2, 'fuck off bitches', '2019-04-06 10:41:02', '2019-04-10 04:18:52', 1, 2, 14),
-(25, 4, 'good one', '2019-04-07 12:13:21', '2019-04-07 13:42:19', 1, 3, 17),
-(33, 4, 'Nice', '2019-04-10 04:42:55', '2019-04-10 04:42:55', 1, 3, 26),
-(34, 4, 'fuck off', '2019-04-10 04:43:16', '2019-04-10 04:43:16', 0, 3, 27),
 (35, 3, 'this suggestion is not appropriate . I do not recommend this set of information.', '2019-04-10 22:01:39', '2019-04-10 22:01:39', 0, 8, 28),
 (36, 4, 'kgf is a very good movie. Its speaks a lot about courage, strength,will power and so on... where as zero is no where near the kgf.  I do not recommend this movie.', '2019-04-10 22:05:18', '2019-04-10 22:05:18', 1, 8, 29);
 
